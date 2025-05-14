@@ -1,0 +1,1 @@
+main_page = 'https://qa-desk.stand.praktikum-services.ru/'
