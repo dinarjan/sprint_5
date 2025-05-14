@@ -23,5 +23,7 @@ def generate_name():
     return f'Осциллограф{random.randint(100, 100000)}'
 
 
+mail_name = generate_email()
+password = generate_password()
 product_name = generate_name()
 incorrect_login_name = generate_incorrect_email()

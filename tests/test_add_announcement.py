@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import StaleElementReferenceException
 from helpers import product_cards
 from generators import product_name
+from data import mail, pswd
 
 
 class TestAnnouncement:
@@ -13,8 +14,7 @@ class TestAnnouncement:
         assert WebDriverWait(page, 3).until(
             EC.visibility_of_element_located(AllLocators.NOTIFICATION_WINDOW)).text == AllLocators.NOTIFICATION_TEXT
 
-    def test_create_announcement_authorized_user(self, page, existing_user):
-        mail, pswd = existing_user
+    def test_create_announcement_authorized_user(self, page):
         WebDriverWait(page, 5).until(EC.visibility_of_element_located(AllLocators.LOGIN_REGISTRATION_BUTTON)).click()
         WebDriverWait(page, 5).until(EC.visibility_of_element_located(AllLocators.EMAIL)).send_keys(mail)
         WebDriverWait(page, 5).until(EC.visibility_of_element_located(AllLocators.PASSWORD)).send_keys(pswd)
